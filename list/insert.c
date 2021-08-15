@@ -1,5 +1,17 @@
 #include "list.h"
 
+t_list	*new_element(int data)
+{
+	t_list	*elem;
+
+	elem = (t_list *)malloc(sizeof(t_list));
+	if (!elem)
+		return (0);
+	elem->data = data;
+	elem->next = 0;
+	return (elem);
+}
+
 void	insert_last_element(t_list *lst, int data)
 {
 	t_list	*new;
@@ -14,15 +26,15 @@ void	insert_last_element(t_list *lst, int data)
 	cur_lst->next = new;
 }
 
-void	insert_front_element(t_list *lst, int data)
+void	insert_front_element(t_list **lst, int data)
 {
 	t_list	*new;
 	
 	new = new_element(data);
 	if(new == 0)
 		return ;
-	new->next = lst;
-	lst = new;
+	new->next = *lst;
+	*lst = new;
 }
 
 void	insert_element(t_list *lst, int data, int index)
@@ -40,8 +52,8 @@ void	insert_element(t_list *lst, int data, int index)
 	{
 		if (cnt == index)
 		{	
-			elem->next = cur_lst->next;
-			cur_lst->next = elem;
+			elem->next = cur_lst->next; 
+			cur_lst->next = elem; 
 			return ;
 		}
 		++cnt;

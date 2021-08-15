@@ -1,4 +1,4 @@
-#include "list.h"
+#include "cc_list.h"
 
 /*
 1. delete all //
@@ -9,9 +9,9 @@
 6. setData //
 */
 
-int	get_element_data(t_list *lst, int index)
+int	get_element_data(t_cc_list *lst, int index)
 {
-	t_list	*cur_lst;
+	t_cc_list	*cur_lst;
 	int		cnt;
 
 	cnt = 0;
@@ -26,9 +26,9 @@ int	get_element_data(t_list *lst, int index)
 	return (0);
 }
 
-int	find_element_idx(t_list *lst, int data) // 중복 값이 있는 경우 제일 처음 인덱스 반환
+int	find_element_idx(t_cc_list *lst, int data) // 중복 값이 있는 경우 제일 처음 인덱스 반환
 {
-	t_list	*cur_lst;
+	t_cc_list	*cur_lst;
 	int		cnt;
 
 	cnt = 0;
@@ -43,14 +43,16 @@ int	find_element_idx(t_list *lst, int data) // 중복 값이 있는 경우 제�
 	return (-1);
 }
 
-void	set_element_by_index(t_list *lst, int index, int new_data)
+void	set_element_by_index(t_cc_list *lst, int index, int new_data)
 {
-	t_list	*cur_lst;
+	t_cc_list	*cur_lst;
 	int		cnt;
+	int		num;
 
 	cnt = 0;
+	num = count_element(lst);
 	cur_lst = lst;
-	while (cur_lst)
+	while (num-- > 0)
 	{
 		if (cnt == index)
 		{
@@ -62,18 +64,17 @@ void	set_element_by_index(t_list *lst, int index, int new_data)
 	}
 }
 
-void	set_element_by_data(t_list *lst, int data, int new_data) // 중복 값이 있는 경우 제일 처음 인덱스 반환
+void	set_element_by_data(t_cc_list *lst, int data, int new_data) // 중복 값이 있는 경우 제일 처음 인덱스 반환
 {
-	t_list	*cur_lst;
-	int		cnt;
+	t_cc_list	*cur_lst;
+	int			num;
 
-	cnt = 0;
+	num = count_element(lst);
 	cur_lst = lst;
-	while (cur_lst)
+	while (num-- > 0)
 	{
 		if (cur_lst->data == data)
 			cur_lst->data = new_data;
-		++cnt;
 		cur_lst = cur_lst->next;
 	}
 }

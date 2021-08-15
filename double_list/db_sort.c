@@ -1,9 +1,9 @@
-#include "list.h"
+#include "db_list.h"
 
-t_list	*sort_list_asc(t_list *lst)
+t_db_list	*sort_db_list_asc(t_db_list *lst)
 {
-	t_list	*cur_lst;
-	t_list	*ret_lst;
+	t_db_list	*cur_lst;
+	t_db_list	*ret_lst;
 	int		min;
 	int		cnt;
 	int		sum;
@@ -29,10 +29,10 @@ t_list	*sort_list_asc(t_list *lst)
 	return (ret_lst);
 }
 
-t_list	*sort_list_desc(t_list *lst)
+t_db_list	*sort_db_list_desc(t_db_list *lst)
 {
-	t_list	*cur_lst;
-	t_list	*ret_lst;
+	t_db_list	*cur_lst;
+	t_db_list	*ret_lst;
 	int		max;
 	int		cnt;
 
