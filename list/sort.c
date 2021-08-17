@@ -6,10 +6,9 @@ t_list	*sort_list_asc(t_list *lst)
 	t_list	*ret_lst;
 	int		min;
 	int		cnt;
-	int		sum;
 
 	cnt = 0;
-	while ((sum = count_element(lst)) > 0)
+	while (count_element(lst) > 0)
 	{
 		min = 2147483647;
 		cur_lst = lst;

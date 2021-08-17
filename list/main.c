@@ -12,9 +12,12 @@ int main()
 	insert_last_element(list, 50); //100 50
 	insert_front_element(&list, -21473648); //-2147 100 50
 	insert_element(list, 0, 2); //-2147 100 0 50
+
+	printf("-----------linked_list------------\n");
 	print_list_all(list); //-2147 100 0 50
 	
 	printf("\ncount_element: %d\n\n", count_element(list)); //연결리스트 노드의 개수
+	
 	printf("get data by index %d: %d\n", 1, get_element_data(list, 1)); //index가 1인 노드의 데이타 가져오기
 	printf("set index 1 data -> 90\n");
 	set_element_by_index(list, 1, 90);
@@ -25,6 +28,7 @@ int main()
 	printf("set data 0 -> 1\n");
 	printf("find index by data %d : %d\n\n", 1, find_element_idx(list, 1)); //data가 0인 노드의 인덱스 가져오기
 
+	printf("-----------linked_list------------\n");
 	print_list_all(list); //-2147 90 1 50
 
 	asc_list = sort_list_asc(list); //오름차순 정렬

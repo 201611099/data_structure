@@ -1,5 +1,24 @@
 #include "array.h"
 
+void	print_element(t_list *arr, long long index)
+{
+	t_list	*cur_arr;
+
+	cur_arr = arr;
+	while (cur_arr)
+	{
+		if (cur_arr->index == index)
+		{
+			if (!strcmp(cur_arr->type, "char"))
+				printf("array[%d]: %c\n", (int)index, cur_arr->char_data);
+			else if (!strcmp(cur_arr->type, "int"))
+				printf("array[%d]: %d\n", (int)index, cur_arr->int_data);
+			return ;
+		}
+		cur_arr = cur_arr->next;
+	}
+}
+
 t_list	*new_element(int idx, char *type)
 {
 	t_list *ret;
@@ -11,39 +30,20 @@ t_list	*new_element(int idx, char *type)
 	return (ret);
 }
 
-t_list	*declare_an_array(char *type, long long size)
-{
-	int		idx;
-	t_list	*ret_arr;
-	t_list	*new_arr;
-	t_list 	*curr_arr;
 
-	//size 음수 예외처리 
-	idx = 0;
-	ret_arr = new_element(idx, type);
-	curr_arr = ret_arr;
-	while (++idx < size)
-	{
-		new_arr = new_element(idx, type);
-		ft_lstadd_back(&curr_arr, new_arr);
-		curr_arr = new_arr;
-	}
-	return (ret_arr);
-}
-
-int	return_value_of_array(t_list *array, long long index)
+int	return_value_of_array(t_list *arr, long long index)
 {
 	t_list	*cur_arr;
 
-	cur_arr = array;
+	cur_arr = arr;
 	while (cur_arr)
 	{
 		if (cur_arr->index == index)
 		{	
 			if (!strcmp(cur_arr->type, "char"))
-				return (cur_arr->char_ctnt);
+				return (cur_arr->char_data);
 			else if (!strcmp(cur_arr->type, "int"))
-				return (cur_arr->int_ctnt);
+				return (cur_arr->int_data);
 		}
 		cur_arr = cur_arr->next;
 	}
@@ -52,34 +52,34 @@ int	return_value_of_array(t_list *array, long long index)
 
 void	insert_value(t_list *arr, long long index, long long value)
 {	
-	t_list	*curr_arr;
+	t_list	*cur_arr;
 
-	curr_arr = arr;
-	while (curr_arr)
+	cur_arr = arr;
+	while (cur_arr)
 	{
-		if (curr_arr->index == index)
+		if (cur_arr->index == index)
 		{
 			if (!strcmp(arr->type, "char"))
-				curr_arr->char_ctnt = (char)value;
+				cur_arr->char_data = (char)value;
 			else if (!strcmp(arr->type, "int"))
-				curr_arr->int_ctnt = (int)value;
+				cur_arr->int_data = (int)value;
 			return ;
 		}
-		curr_arr = curr_arr->next;
+		cur_arr = cur_arr->next;
 	}
 }
 
-void	initialize_an_array(t_list *array, long long value)
+void	initialize_an_array(t_list *arr, long long value)
 {
 	t_list	*cur_arr;
 	
-	cur_arr = array;
+	cur_arr = arr;
 	while (cur_arr)
 	{
-		cur_arr->char_ctnt = 0;
-		cur_arr->int_ctnt = 0;
+		cur_arr->char_data = 0;
+		cur_arr->int_data = 0;
 		cur_arr = cur_arr->next;
 	}
-	insert_value(array, 0, value);
+	insert_value(arr, 0, value);
 	return ;
 }

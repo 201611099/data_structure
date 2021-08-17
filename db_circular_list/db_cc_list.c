@@ -12,7 +12,7 @@
 int	get_element_data(t_cc_list *lst, int index) //index번째 요소를 가져오는
 {
 	t_cc_list	*cur_lst;
-	int		cnt;
+	int			cnt;
 
 	cnt = 0;
 	cur_lst = lst;
@@ -29,7 +29,7 @@ int	get_element_data(t_cc_list *lst, int index) //index번째 요소를 가져�
 int	find_element_idx(t_cc_list *lst, int data) // 중복 값이 있는 경우 제일 처음 인덱스 반환
 {
 	t_cc_list	*cur_lst;
-	int		cnt;
+	int			cnt;
 
 	cnt = 0;
 	cur_lst = lst;
@@ -46,8 +46,8 @@ int	find_element_idx(t_cc_list *lst, int data) // 중복 값이 있는 경우 �
 void	set_element_by_index(t_cc_list *lst, int index, int new_data)
 {
 	t_cc_list	*cur_lst;
-	int		cnt;
-	int		num;
+	int			cnt;
+	int			num;
 
 	cnt = 0;
 	num = count_element(lst);

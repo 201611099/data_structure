@@ -2,15 +2,15 @@
 
 t_db_list	*new_element(int data)
 {
-	t_db_list	*elem;
+	t_db_list	*new;
 
-	elem = (t_db_list *)malloc(sizeof(t_db_list));
-	if (!elem)
+	new = (t_db_list *)malloc(sizeof(t_db_list));
+	if (!new)
 		return (0);
-	elem->data = data;
-	elem->prev = 0;
-	elem->next = 0;
-	return (elem);
+	new->data = data;
+	new->prev = 0;
+	new->next = 0;
+	return (new);
 }
 
 void	insert_last_element(t_db_list *lst, int data)
@@ -43,22 +43,22 @@ void	insert_front_element(t_db_list **lst, int data)
 void	insert_element(t_db_list *lst, int data, int index)
 {
 	int		cnt;
-	t_db_list 	*elem;
+	t_db_list 	*new;
 	t_db_list	*cur_lst;
 	
 	cnt = 1;
-	elem = new_element(data);
-	if (elem == 0)
+	new = new_element(data);
+	if (new == 0)
 		return ;
 	cur_lst = lst->next; 
 	while (cur_lst)
 	{
 		if (cnt == index) 
 		{	
-			cur_lst->prev->next = elem; 
-			elem->prev = cur_lst->prev; 
-			elem->next = cur_lst; 
-			cur_lst->prev = elem; 
+			cur_lst->prev->next = new; 
+			new->prev = cur_lst->prev; 
+			new->next = cur_lst; 
+			cur_lst->prev = new; 
 			return ; 
 		}
 		++cnt;

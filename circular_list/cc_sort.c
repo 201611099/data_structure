@@ -1,4 +1,4 @@
-#include "db_cc_list.h"
+#include "cc_list.h"
 
 t_cc_list	*sort_cc_list_asc(t_cc_list *lst)
 {
@@ -7,14 +7,12 @@ t_cc_list	*sort_cc_list_asc(t_cc_list *lst)
 	int			min;
 	int			cnt;
 	int			num;
-	int			sum;
 
 	cnt = 0;
-	while ((sum = count_element(lst)) > 0)
+	while ((num = count_element(lst)) > 0)
 	{
 		min = 2147483647;
 		cur_lst = lst;
-		num = count_element(lst);
 		while (num-- > 0)
 		{
 			if (cur_lst->data < min)
@@ -35,16 +33,15 @@ t_cc_list	*sort_cc_list_desc(t_cc_list *lst)
 {
 	t_cc_list	*cur_lst;
 	t_cc_list	*ret_lst;
-	int		max;
-	int		cnt;
-	int		num;
+	int			max;
+	int			cnt;
+	int			num;
 
 	cnt = 0;
-	while (count_element(lst) > 0)
+	while ((num = count_element(lst)) > 0)
 	{
 		max = -2147483648;
 		cur_lst = lst;
-		num = count_element(lst);
 		while (num-- > 0)
 		{
 			if (cur_lst->data > max)

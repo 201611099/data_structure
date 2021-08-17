@@ -4,7 +4,7 @@ void	remove_element_idx(t_db_list **lst, int index) //해당 인덱스 요소 �
 {
 	t_db_list	*cur_lst;
 	t_db_list	*pre_lst;
-	int		cnt;
+	int			cnt;
 
 	cnt = 0;
 	cur_lst = *lst;

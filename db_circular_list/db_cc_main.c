@@ -11,6 +11,7 @@ int main()
 	insert_last_element(list, 50); //100 50
 	insert_front_element(&list, -21473648); //-2147 100 50
 	insert_element(list, 0, 2); //-2147 100 0 50
+	printf("-----------double_circular_linked_list------------\n");
 	print_cc_list_all(list); //-2147 100 0 50
 	
 	printf("list->next->next->prev->data: %d\n", list->next->next->prev->data); //100이 나와야 함
@@ -26,6 +27,7 @@ int main()
 	printf("set data 0 -> 1\n");
 	printf("find index by data %d : %d\n\n", 1, find_element_idx(list, 1)); //data가 0인 노드의 인덱스 가져오기
 
+	printf("-----------double_circular_linked_list------------\n");
 	print_cc_list_all(list); //-2147 90 1 50
 
 	asc_list = sort_cc_list_asc(list); //오름차순 정렬
