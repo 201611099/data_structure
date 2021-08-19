@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"list.h": "c",
+		"time.h": "c",
+		"_clock_t.h": "c"
+	}
+}
