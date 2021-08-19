@@ -40,7 +40,6 @@ t_list	*declare_an_array(char *type, long long size)
 	{
 		new_arr = new_element(idx, type);
 		ft_lstadd_back(&cur_arr, new_arr);
-		cur_arr = new_arr;
 	}
 	return (ret_arr);
 }
