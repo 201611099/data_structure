@@ -24,14 +24,14 @@ int main()
 	clock_t start1 = clock();
 	int data1 = array[idx];
 	clock_t end1 = clock();
-	printf("\n배열 -> 데이터 탐색에 걸린 시간: %lf\n", (double)(end1 - start1)/CLOCKS_PER_SEC);
+	printf("\n배열 -> 데이터 탐색에 걸린 시간: %lf초\n", (double)(end1 - start1)/CLOCKS_PER_SEC);
 	printf("array[%d]: %d\n\n", idx, data1);
 
 	//2. 연결리스트
 	clock_t start2 = clock();
 	int data2 = get_element_data(list, idx);
 	clock_t end2 = clock();
-	printf("연결리스트 -> 데이터 탐색에 걸린 시간: %lf\n", (double)(end2 - start2)/CLOCKS_PER_SEC);
+	printf("연결리스트 -> 데이터 탐색에 걸린 시간: %lf초\n", (double)(end2 - start2)/CLOCKS_PER_SEC);
 	printf("list[%d]: %d\n\n", idx, data2);
 
 	//-> 인덱스가 작을 땐 연결리스트가 빠름. 인덱스가 1000에 가까워지면 배열이 더 빠름

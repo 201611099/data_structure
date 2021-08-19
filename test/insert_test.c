@@ -28,7 +28,7 @@ int main()
 		array[i] = array[i - 1];
 	array[idx] = data;
 	clock_t end1 = clock();
-	printf("배열 -> 데이터 추가에 걸린 시간: %lf\n", (double)(end1 - start1)/CLOCKS_PER_SEC);
+	printf("배열 -> 데이터 추가에 걸린 시간: %lf초\n", (double)(end1 - start1)/CLOCKS_PER_SEC);
 	printf("추가 후 array[%d]: %d\n\n", idx, array[idx]);
 
 	//2. 연결리스트
@@ -36,7 +36,7 @@ int main()
 	clock_t start2 = clock();
 	insert_element(list, data, idx);	
 	clock_t end2 = clock();
-	printf("연결리스트 -> 데이터 추가에 걸린 시간: %lf\n", (double)(end2 - start2)/CLOCKS_PER_SEC);
+	printf("연결리스트 -> 데이터 추가에 걸린 시간: %lf초\n", (double)(end2 - start2)/CLOCKS_PER_SEC);
 	printf("추가 후 list[%d]: %d\n\n", idx, get_element_data(list, idx));
 
 	//-> 인덱스가 작을 땐 연결리스트가 빠름. 인덱스가 배열의 크기에 가까워지면 배열이 더 빠름

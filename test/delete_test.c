@@ -26,7 +26,7 @@ int main()
 	for (int i = idx; i < size - 1; i++)
 		array[i] = array[i + 1];
 	clock_t end1 = clock();
-	printf("배열 -> 데이터 삭제에 걸린 시간: %lf\n", (double)(end1 - start1)/CLOCKS_PER_SEC);
+	printf("배열 -> 데이터 삭제에 걸린 시간: %lf초\n", (double)(end1 - start1)/CLOCKS_PER_SEC);
 	printf("삭제 후 array[%d]: %d\n\n", idx, array[idx]);
 
 	//2. 연결리스트
@@ -34,7 +34,7 @@ int main()
 	clock_t start2 = clock();
 	remove_element_idx(&list, idx);
 	clock_t end2 = clock();
-	printf("연결리스트 -> 데이터 삭제에 걸린 시간: %lf\n", (double)(end2 - start2)/CLOCKS_PER_SEC);
+	printf("연결리스트 -> 데이터 삭제에 걸린 시간: %lf초\n", (double)(end2 - start2)/CLOCKS_PER_SEC);
 	printf("삭제 후 list[%d]: %d\n\n", idx, get_element_data(list, idx));
 
 	//-> 배열과 링크드리스트의 크기가 작을 땐 어떤 인덱스의 데이터를 삭제하든 별 차이가 없고 배열이 더 빠를 때가 많음
