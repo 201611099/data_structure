@@ -1,4 +1,4 @@
 #!/bin/bash
 
-gcc insert_test.c list/*
+gcc insert_test.c list/*.c list/*.h
 ./a.out
